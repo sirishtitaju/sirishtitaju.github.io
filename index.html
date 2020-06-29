@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangman | Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body id="body">
+  <div class="wrapper">
+    <p class="title">
+      <span class="h1">Hangman</span> <img src="img/hangman.svg" alt="Logo">
+    </p>
+    <p>
+      Find the
+
+      <span class="letter-hidden">hidden</span>
+
+      word &mdash;
+
+      <span style="color: #fab1a0;">Guess</span>
+
+      with the letters
+    </p>
+    <div class="game-container">
+      <svg height="250" width="200" class="figure-container">
+        <!-- ------------------- Rod ----------------- -->
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <line x1="60" y1="20" x2="60" y2="250" />
+        <line x1="30" y1="250" x2="90" y2="250" />
+
+        <!-- ------------------------ Head ------------------ -->
+
+        <circle cx="140" cy="80" r="30" class="figure-part" />
+
+        <!-- --------------------- Body ----------------------- -->
+        <line x1="140" y1="110" x2="140" y2="180" class="figure-part" />
+
+        <!-- --------------------- Arms -------------------------- -->
+        <line x1="140" y1="150" x2="100" y2="120" class="figure-part" />
+        <line x1="140" y1="150" x2="180" y2="120" class="figure-part" />
+
+        <!-- -------------------------- Legs ----------------------- -->
+        <line x1="140" y1="180" x2="100" y2="220" class="figure-part" />
+        <line x1="140" y1="180" x2="180" y2="220" class="figure-part" />
+      </svg>
+
+      <div class="wrong-letters-container">
+        <div id="wrong-letters" class="wrong-letters">
+        </div>
+      </div>
+
+      <div class="word" id="word">
+        <span class="letter"></span>
+        <span class="letter"></span>
+        <span class="letter"></span>
+        <span class="letter"></span>
+        <span class="letter"></span>
+      </div>
+
+      <!-- Container for final message -->
+      <div id="popup-container" class="popup-container">
+        <div class="popup">
+          <h2 id="final-message">You have Won</h2>
+          <button id="play-button">Play Again</button>
+        </div>
+      </div>
+    </div>
+    <canvas id="canvas">
+    </canvas>
+    <!-- ------------------ Notification ------------------ -->
+    <div class="notification-container" id="notification-container">
+      <p>You have Already Entered this letter</p>
+    </div>
+    <div id="hint-container">
+      <div class="hint">
+        <div class="hint-before">
+          ⬆  <span  style="color:#fab1a0">Hint</span>
+        </div>
+        <div class="hint-message">
+          &nbsp; This is the Hint
+        </div>     
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
